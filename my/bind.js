@@ -1,16 +1,26 @@
-// Function.prototype.myBind = function(ctx) {
-//   if (!ctx) {
-//     ctx = typeof window !== 'undefined' ? window : global;
-//   }
+Function.prototype.myBind = function(ctx) {
+  if (typeof this !== "function") {
+    throw new Error("Bind must be called on function")
+  }
 
-//   let context = ctx;
+  var self = this;
 
-//   function f(...args) {
-//     return f.call(context, ...args)
-//   }
+  var fn = function() {};
 
-//   return f;
-// }
+  var args = Array.prototype.slice.call(arguments, 1);
+
+  var fbind = function(...innerArgs) {
+    return self.apply(ctx, args.concat(innerArgs));
+  }
+
+  fn.prototype = this.prototype;
+
+  fbind.prototype = new fn();
+
+  return fbind;
+}
+
+
 
 Function.prototype.bind = function (context) {
   // 调用 bind 的不是函数，需要抛出异常

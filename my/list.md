@@ -6,6 +6,8 @@
 
 ##### call apply bind
 
+##### deepclone
+
 ##### 防抖 debounce 节流 throttle
 
 ##### 快排
