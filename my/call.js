@@ -23,8 +23,9 @@ let obj = {
 
 var name = 'yzy';
 
-function fn() {
+function fn(params) {
   console.log(this.name);
+  console.log(params)
 }
 
 fn()

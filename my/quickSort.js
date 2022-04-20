@@ -12,14 +12,6 @@ function quickSort(arr, left, right) {
 function getPosition(arr, left, right) {
   let p = left, index = p + 1;
 
-  // while(left + 1 < right) {
-  //   if (arr[p] > arr[left]) {
-  //     swap(arr, index, left)
-  //     index ++;
-  //   }
-
-  //   left++;
-  // }
   for (let i = index; i <= right; i ++) {
     if (arr[p] > arr[i]) {
       swap(arr, i, index)

@@ -1,5 +1,5 @@
 function myInstanceof(target, origin) {
-  if (typeof target !== 'object' || typeof target === null) {
+  if (typeof target !== 'object' || target === null) {
     return false
   }
 
